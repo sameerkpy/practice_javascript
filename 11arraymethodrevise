@@ -1,0 +1,279 @@
+// ========================================
+// ARRAY METHODS - COMPLETE REVISION
+// ========================================
+
+// Base Array
+let arr = [10, 20, 30, 40, 50];
+
+console.log("Original Array:", arr);
+// Output: [10,20,30,40,50]
+
+// ========================================
+// push()
+// ========================================
+
+let pushArr = [...arr];
+pushArr.push(60);
+
+console.log(pushArr);
+// Output: [10,20,30,40,50,60]
+
+// ========================================
+// pop()
+// ========================================
+
+let popArr = [...arr];
+popArr.pop();
+
+console.log(popArr);
+// Output: [10,20,30,40]
+
+// ========================================
+// shift()
+// ========================================
+
+let shiftArr = [...arr];
+shiftArr.shift();
+
+console.log(shiftArr);
+// Output: [20,30,40,50]
+
+// ========================================
+// unshift()
+// ========================================
+
+let unshiftArr = [...arr];
+unshiftArr.unshift(5);
+
+console.log(unshiftArr);
+// Output: [5,10,20,30,40,50]
+
+// ========================================
+// slice()
+// ========================================
+
+console.log(arr.slice(1,4));
+// Output: [20,30,40]
+
+// ========================================
+// splice()
+// ========================================
+
+let spliceArr = [...arr];
+spliceArr.splice(2,1);
+
+console.log(spliceArr);
+// Output: [10,20,40,50]
+
+// ========================================
+// concat()
+// ========================================
+
+let arr2 = [60,70];
+
+console.log(arr.concat(arr2));
+// Output: [10,20,30,40,50,60,70]
+
+// ========================================
+// join()
+// ========================================
+
+console.log(arr.join("-"));
+// Output: 10-20-30-40-50
+
+// ========================================
+// reverse()
+// ========================================
+
+let reverseArr = [...arr];
+reverseArr.reverse();
+
+console.log(reverseArr);
+// Output: [50,40,30,20,10]
+
+// ========================================
+// sort()
+// ========================================
+
+let sortArr = [5,2,9,1,7];
+
+sortArr.sort((a,b)=>a-b);
+
+console.log(sortArr);
+// Output: [1,2,5,7,9]
+
+// ========================================
+// fill()
+// ========================================
+
+let fillArr = [1,2,3];
+
+fillArr.fill(0);
+
+console.log(fillArr);
+// Output: [0,0,0]
+
+// ========================================
+// includes()
+// ========================================
+
+console.log(arr.includes(30));
+// Output: true
+
+// ========================================
+// indexOf()
+// ========================================
+
+console.log(arr.indexOf(40));
+// Output: 3
+
+// ========================================
+// lastIndexOf()
+// ========================================
+
+let lastArr = [10,20,30,20];
+
+console.log(lastArr.lastIndexOf(20));
+// Output: 3
+
+// ========================================
+// find()
+// ========================================
+
+console.log(arr.find(num=>num>25));
+// Output: 30
+
+// ========================================
+// findIndex()
+// ========================================
+
+console.log(arr.findIndex(num=>num>25));
+// Output: 2
+
+// ========================================
+// filter()
+// ========================================
+
+console.log(arr.filter(num=>num>25));
+// Output: [30,40,50]
+
+// ========================================
+// map()
+// ========================================
+
+console.log(arr.map(num=>num*2));
+// Output: [20,40,60,80,100]
+
+// ========================================
+// forEach()
+// ========================================
+
+arr.forEach(num=>console.log(num));
+// Output:
+//10
+//20
+//30
+//40
+//50
+
+// ========================================
+// reduce()
+// ========================================
+
+let sum = arr.reduce((acc,curr)=>acc+curr,0);
+
+console.log(sum);
+// Output: 150
+
+// ========================================
+// some()
+// ========================================
+
+console.log(arr.some(num=>num>45));
+// Output: true
+
+// ========================================
+// every()
+// ========================================
+
+console.log(arr.every(num=>num>5));
+// Output: true
+
+// ========================================
+// flat()
+// ========================================
+
+let nested = [1,[2,3],[4,[5]]];
+
+console.log(nested.flat());
+// Output: [1,2,3,4,[5]]
+
+// ========================================
+// flatMap()
+// ========================================
+
+console.log(arr.flatMap(num=>[num,num*2]));
+// Output:
+// [10,20,20,40,30,60,40,80,50,100]
+
+// ========================================
+// at()
+// ========================================
+
+console.log(arr.at(-1));
+// Output: 50
+
+// ========================================
+// toString()
+// ========================================
+
+console.log(arr.toString());
+// Output:
+// 10,20,30,40,50
+
+// ========================================
+// Array.isArray()
+// ========================================
+
+console.log(Array.isArray(arr));
+// Output: true
+
+// ========================================
+// length
+// ========================================
+
+console.log(arr.length);
+// Output: 5
+
+
+
+ /*
+| Method          | Kya karta hai?          | Original Array Change? |
+| --------------- | ----------------------- | ---------------------- |
+| `push()`        | Last me add             | ✅ Yes                  |
+| `pop()`         | Last remove             | ✅ Yes                  |
+| `shift()`       | First remove            | ✅ Yes                  |
+| `unshift()`     | First add               | ✅ Yes                  |
+| `splice()`      | Add, Remove, Replace    | ✅ Yes                  |
+| `slice()`       | Array ka part copy      | ❌ No                   |
+| `concat()`      | Do arrays join          | ❌ No                   |
+| `join()`        | Array → String          | ❌ No                   |
+| `reverse()`     | Reverse array           | ✅ Yes                  |
+| `sort()`        | Sort array              | ✅ Yes                  |
+| `fill()`        | Ek value se fill        | ✅ Yes                  |
+| `includes()`    | Value hai ya nahi       | ❌ No                   |
+| `indexOf()`     | First index             | ❌ No                   |
+| `lastIndexOf()` | Last index              | ❌ No                   |
+| `find()`        | Pehla matching element  | ❌ No                   |
+| `findIndex()`   | Pehle match ka index    | ❌ No                   |
+| `filter()`      | Condition se new array  | ❌ No                   |
+| `map()`         | Har element transform   | ❌ No                   |
+| `forEach()`     | Loop chalata hai        | ❌ No                   |
+| `reduce()`      | Single value banata hai | ❌ No                   |
+| `some()`        | Ek bhi match ho         | ❌ No                   |
+| `every()`       | Sab match ho            | ❌ No                   |
+| `flat()`        | Nested array flatten    | ❌ No                   |
+| `flatMap()`     | `map()` + `flat()`      | ❌ No                   |
+| `at()`          | Index se value          | ❌ No                   |
+| `toString()`    | Array → String          | ❌ No                   |
+*/
